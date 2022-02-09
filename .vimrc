@@ -4,9 +4,6 @@ autocmd! bufwritepost .vimrc source %
 " Enable mouse
 set mouse=a
 
-" Fix cursor not going past letters
-set virtualedit=onemore
-
 " Better copy and paste
 set pastetoggle=<F2>
 set clipboard=unnamed
@@ -43,18 +40,12 @@ noremap <Leader>s :sort<CR>
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
 
-" Show whitespace (only useful for python)
-" MUST be insterted BEFORE the colorscheme command
-" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-" au InsertLeave * match ExtraWhitespace /\s\+$/
-
 " Color scheme
 set t_Co=256
-" color wombat256mod
 
 "Show line numbers and lengths
 set number " show line numbers
-set relativenumber " show relative line numbers
+"set relativenumber " show relative line numbers
 set tw=98 " width of document (used by gd)
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
@@ -70,9 +61,9 @@ set history=700
 set undolevels=700
 
 " Use spaces instead of tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set shiftround
 set expandtab
 
@@ -88,16 +79,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Have NERDTree ignore node_modules
-let g:NERDTreeIgnore = ['^node_modules$']
-
-" Setup Pathogen to manage your plugins
-" curl -so ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/folder
-execute pathogen#infect()
+" Make sure syntax highlighting works (dunno why this broke)
+"set re=0
 
 " Enable syntax highlighting
 "You need to reload this file for the change to apply
-filetype plugin indent on
-syntax on
-
+"filetype plugin indent on
+"syntax on
