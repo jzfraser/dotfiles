@@ -11,25 +11,33 @@ return require('packer').startup(function(use)
 
   use('ellisonleao/gruvbox.nvim')
 
-  use('neovim/nvim-lspconfig')
-  use('onsails/lspkind-nvim')
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
+  use('neovim/nvim-lspconfig') -- configure nvim LSP
+  use('onsails/lspkind-nvim') -- nice icons
+  use('williamboman/mason.nvim') -- LSP manager
+  use('williamboman/mason-lspconfig.nvim') -- LSP manager helper
+  use('jose-elias-alvarez/null-ls.nvim') -- LSP extra stuff
+  use('MunifTanjim/prettier.nvim') -- Prettier formatting
   use('hrsh7th/nvim-cmp') -- Completion
   use('hrsh7th/cmp-buffer') -- nvim-cmp source for buffer words
+  use('hrsh7th/cmp-path') -- nvim-cmp source for path inclusion
+  use('hrsh7th/cmp-cmdline') -- nvim-cmp source for cmdline words
+  use('hrsh7th/cmp-nvim-lua') -- nvim-cmp source for nvim lua
   use('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP
-  use('hrsh7th/cmp-path')
-  use('hrsh7th/cmp-nvim-lsp-signature-help')
-  use('saadparwaiz1/cmp_luasnip')
-  use('L3MON4D3/LuaSnip')
+  use('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for signatures
+  use('saadparwaiz1/cmp_luasnip') -- snippets needed for nvim-cmp
+  use('L3MON4D3/LuaSnip') -- snippets needed for nvim-cmp
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  use('windwp/nvim-autopairs')
+  use('windwp/nvim-ts-autotag')
+
+  use('lewis6991/gitsigns.nvim')
+
+  use('nvim-lualine/lualine.nvim')
+  use('akinsho/nvim-bufferline.lua')
 
   use('nvim-telescope/telescope.nvim')
-  use('akinsho/nvim-bufferline.lua')
   use {
     'kyazdani42/nvim-tree.lua',
     config = function() require'nvim-tree'.setup {
