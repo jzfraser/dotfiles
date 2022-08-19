@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
   use('kyazdani42/nvim-web-devicons')
 
   use('ellisonleao/gruvbox.nvim')
+  use('folke/tokyonight.nvim')
 
   use('neovim/nvim-lspconfig') -- configure nvim LSP
   use('onsails/lspkind-nvim') -- nice icons
@@ -35,13 +36,14 @@ return require('packer').startup(function(use)
   use('lewis6991/gitsigns.nvim')
 
   use('nvim-lualine/lualine.nvim')
-  use('akinsho/nvim-bufferline.lua')
+  use('akinsho/bufferline.nvim')
 
   use('nvim-telescope/telescope.nvim')
+  use('nvim-telescope/telescope-file-browser.nvim')
   use {
     'kyazdani42/nvim-tree.lua',
     config = function() require'nvim-tree'.setup {
-      hijack_netrw = true,
+      hijack_netrw = false,
     } end
   }
 end)
