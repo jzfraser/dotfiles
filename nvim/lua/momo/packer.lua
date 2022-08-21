@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
   use('numToStr/Comment.nvim') -- quick commenting
 
   use('lewis6991/gitsigns.nvim') -- what's changed visable in sidebar
+  use('tpope/vim-fugitive') -- git but it's vim... or vim but it's git?
 
   use('nvim-lualine/lualine.nvim') -- activity bar
   use('akinsho/bufferline.nvim') -- tabs

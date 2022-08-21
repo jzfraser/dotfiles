@@ -11,7 +11,7 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.cmd(':set splitright')
-vim.cmd(':set completeopt=menu,menuone,noinsert')
+vim.cmd(':set completeopt=menu,menuone')
 vim.cmd(':set bs=2')
 vim.cmd(':set mouse=a')
 
