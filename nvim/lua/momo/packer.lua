@@ -1,7 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -15,6 +15,10 @@ return require('packer').startup(function(use)
   use('folke/tokyonight.nvim')
   use('gruvbox-community/gruvbox')
   use('eddyekofo94/gruvbox-flat.nvim')
+  use({
+    'rose-pine/neovim',
+    as = 'rose-pine'
+  })
 
   use('neovim/nvim-lspconfig') -- configure nvim LSP
   use('onsails/lspkind-nvim') -- nice icons for LSPs
@@ -46,12 +50,14 @@ return require('packer').startup(function(use)
   use('akinsho/bufferline.nvim') -- tabs
 
   use('nvim-telescope/telescope.nvim') -- fuzzy files and more
-  use('nvim-telescope/telescope-file-browser.nvim') -- file browser extension
+  use('nvim-telescope/telescope-file-browser.nvim')
   use({
     -- file tree
     'kyazdani42/nvim-tree.lua',
-    config = function() require'nvim-tree'.setup({
-      hijack_netrw = false,
-    }) end
+    config = function()
+      require 'nvim-tree'.setup({
+        hijack_netrw = false,
+      })
+    end
   })
 end)

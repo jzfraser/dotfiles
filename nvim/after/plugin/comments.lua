@@ -1,11 +1,11 @@
 require('Comment').setup({
   toggler = {
-    block = '<leader>cc',
-    line = '<C-_>',
+    block = '<leader>bc',
+    line = '<leader>/',
   },
   opleader = {
-    block = '<leader>c',
-    line = '<C-_>',
+    block = '<leader>bc',
+    line = '<leader>/',
   },
   ---LHS of extra mappings
   extra = {

@@ -1,5 +1,3 @@
-vim.opt.background = 'dark'
-
 -- vim.g.gruvbox_contrast_dark = "medium"
 -- vim.cmd('colorscheme gruvbox')
 
@@ -7,3 +5,5 @@ vim.opt.background = 'dark'
 -- vim.cmd('colorscheme tokyonight')
 
 vim.cmd('colorscheme gruvbox-flat')
+
+-- vim.cmd('colorscheme rose-pine')
