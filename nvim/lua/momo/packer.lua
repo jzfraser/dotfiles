@@ -50,6 +50,8 @@ return require('packer').startup(function(use)
   use('akinsho/bufferline.nvim') -- tabs
   use('mbbill/undotree')
 
+  use('folke/which-key.nvim')
+
   use('nvim-telescope/telescope.nvim') -- fuzzy files and more
   use('nvim-telescope/telescope-file-browser.nvim')
   use({
