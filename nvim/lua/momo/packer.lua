@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
 
   use('nvim-lualine/lualine.nvim') -- activity bar
   use('akinsho/bufferline.nvim') -- tabs
+  use('mbbill/undotree')
 
   use('nvim-telescope/telescope.nvim') -- fuzzy files and more
   use('nvim-telescope/telescope-file-browser.nvim')
