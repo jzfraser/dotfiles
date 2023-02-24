@@ -1,8 +1,57 @@
+# Work Config
+
+export DEVSPACE_NS='dev-jfraser'
+
+alias devspace-purge='devspace purge -n $DEVSPACE_NS'
+
+function set_devspace_kube {
+  export AWS_PROFILE=staging-admin;
+  aws sso login
+  fsh k8s cluster dev
+  kubens $DEVSPACE_NS
+  kubectl get ns
+}
+
+function set_staging_kube {
+  export AWS_PROFILE=staging-admin;
+  aws sso login
+  fsh k8s cluster staging
+  kubens dbt-cloud
+  kubectl get ns
+}
+
+function set_prod_kube {
+  export AWS_PROFILE=prod-viewonly
+  aws sso login
+  kubectl config use-context dbt-cloud-prod
+  kubens dbt-cloud
+  kubectl get ns
+}
+
+function set_prod_poweruser_kube {
+  export AWS_PROFILE=prod-poweruser
+  aws sso login
+  kubectl config use-context dbt-cloud-prod
+  kubens dbt-cloud
+  kubectl get ns
+}
+
+function set_single-tenant-staging_kube {
+  export AWS_PROFILE=singletenant-poweruser
+  aws sso login
+  kubectl config use-context dbt-cloud-prod
+  kubens dbt-cloud
+  kubectl get ns
+}
+# End Work Config
+
 # Jack's config based on Luke Smith's
 # Useful aliases
 alias ls='ls -G'
+alias vim="nvim"
 alias chrome="google-chrome-stable"
 alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
+alias k="kubectl"
 
 # Modify Path
 export PATH="$PATH:/Users/jackfraser/.local/share/nvim/lsp_servers"
@@ -13,6 +62,37 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# NVM auto use version if .nvmrc present
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# kubectl autocomplete
+function kubectl() {
+    if ! type __start_kubectl >/dev/null 2>&1; then
+        source <(command kubectl completion zsh)
+    fi
+
+    command kubectl "$@"
+}
 
 # Ruby Gems
 export GEM_HOME="$HOME/gems"
