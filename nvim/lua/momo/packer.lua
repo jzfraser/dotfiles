@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
 
   -- general utils
   use('nvim-lua/plenary.nvim')
+  use('mfussenegger/nvim-dap')
   use('kyazdani42/nvim-web-devicons')
 
   -- themes
@@ -26,6 +27,7 @@ return require('packer').startup(function(use)
   use('williamboman/mason-lspconfig.nvim') -- LSP manager helper
   use('jose-elias-alvarez/null-ls.nvim') -- LSP extra stuff
   use('MunifTanjim/prettier.nvim') -- Prettier formatting
+  use('simrat39/rust-tools.nvim') -- rust with batteries included
 
   use('hrsh7th/nvim-cmp') -- Completion
   use('hrsh7th/cmp-buffer') -- nvim-cmp source for buffer words
