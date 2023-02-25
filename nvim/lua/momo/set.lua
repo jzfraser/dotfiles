@@ -7,13 +7,15 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+vim.opt.smartindent = true
+
 vim.opt.wrap = false
 
-vim.cmd(':set splitright')
-vim.cmd(':set completeopt=menu,menuone')
+vim.cmd(":set splitright")
+vim.cmd(":set completeopt=menu,menuone")
 
-vim.cmd(':set bs=2')
-vim.cmd(':set mouse=a')
+vim.cmd(":set bs=2")
+vim.cmd(":set mouse=a")
 
 vim.opt.swapfile = false
 vim.opt.backup = false

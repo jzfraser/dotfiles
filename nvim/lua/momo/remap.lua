@@ -1,20 +1,26 @@
-local Remap = require('momo.keymap')
+local Remap = require("momo.keymap")
 local nnoremap = Remap.nnoremap
+local vnoremap = Remap.vnoremap
 
--- make room for and set leader
-nnoremap('<Space>o', '<Nop>')
-vim.g.mapleader = ' '
+vim.g.mapleader = " " -- set leader to <Space>
 
--- disable highlighting
-nnoremap('<leader>h', ':nohl<CR>')
+nnoremap("<Space>o", "<Nop>") -- make room for and set leader
 
--- open project viewer (tree)
-nnoremap('<leader>op', ':NvimTreeToggle<CR>')
+nnoremap("<leader>h", ":nohl<CR>") -- disable highlighting
+
+nnoremap("<leader>op", ":NvimTreeToggle<CR>") -- open project viewer (tree)
 
 -- buffer movement
-nnoremap('<leader>bn', '<cmd>bn<CR>')
-nnoremap('<leader>bb', '<cmd>bp<CR>')
-nnoremap('<leader>bd', '<cmd>bd<CR>')
+nnoremap("<leader>bn", "<cmd>bn<CR>") -- next
+nnoremap("<leader>bb", "<cmd>bp<CR>") -- previous (back)
+nnoremap("<leader>bd", "<cmd>bd<CR>") -- delete
 
--- quick close all
-nnoremap('<leader>E', '<cmd>qa!<CR>')
+nnoremap("<leader>E", "<cmd>qa!<CR>") -- quick close nvim without saving
+
+-- editor movement
+vnoremap("J", ":m '>+1<CR>gv=gv") -- in visual, move block down, indent when needed
+vnoremap("K", ":m '<-2<CR>gv=gv") -- in visual, move block up, indent when needed
+nnoremap("<C-d>", "<C-d>zz") -- half page down, keep cursor in center of buffer
+nnoremap("<C-u>", "<C-u>zz") -- half page up, keep cursor in center of buffer
+nnoremap("n", "nzzzv") -- next search term, keep cursor in center of buffer
+nnoremap("N", "Nzzzv") -- previous search term, keep cursor in center of buffer
