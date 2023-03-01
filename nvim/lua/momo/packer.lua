@@ -13,12 +13,11 @@ return require('packer').startup(function(use)
   use('kyazdani42/nvim-web-devicons')
 
   -- themes
-  use('folke/tokyonight.nvim')
-  use('gruvbox-community/gruvbox')
   use('eddyekofo94/gruvbox-flat.nvim')
+  use('rmehri01/onenord.nvim')
   use({
-    'rose-pine/neovim',
-    as = 'rose-pine'
+    'catppuccin/nvim',
+    as = 'catppuccin'
   })
 
   use('neovim/nvim-lspconfig') -- configure nvim LSP
