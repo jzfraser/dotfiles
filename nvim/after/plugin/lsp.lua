@@ -15,10 +15,10 @@ local function config(_config)
       nnoremap("K", function() vim.lsp.buf.hover() end)
       nnoremap("[d", function() vim.diagnostic.goto_next() end)
       nnoremap("]d", function() vim.diagnostic.goto_prev() end)
-      nnoremap("<leader>cd", function() vim.diagnostic.open_float() end)
-      nnoremap("<leader>ca", function() vim.lsp.buf.code_action() end)
-      nnoremap("<leader>ct", function() vim.lsp.buf.type_definition() end)
-      nnoremap("<leader>cr", function() vim.lsp.buf.rename() end)
+      nnoremap("<leader>ld", function() vim.diagnostic.open_float() end)
+      nnoremap("<leader>la", function() vim.lsp.buf.code_action() end)
+      nnoremap("<leader>lt", function() vim.lsp.buf.type_definition() end)
+      nnoremap("<leader>lr", function() vim.lsp.buf.rename() end)
       inoremap("<C-h>", function() vim.lsp.buf.signature_help() end)
     end,
   }, _config or {})
@@ -37,9 +37,14 @@ lspconfig.tsserver.setup(config({
   filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
   cmd = { 'typescript-language-server', '--stdio' }
 }))
+lspconfig.rust_analyzer.setup(config({
+  diagnostics = {
+    enable = true
+  }
+}))
+lspconfig.clangd.setup(config())
 lspconfig.yamlls.setup(config())
 lspconfig.pyright.setup(config())
 lspconfig.tailwindcss.setup(config())
 lspconfig.terraformls.setup(config())
 lspconfig.eslint.setup(config())
-lspconfig.rust_analyzer.setup(config())
