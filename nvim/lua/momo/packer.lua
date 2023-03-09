@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   -- themes
   use('eddyekofo94/gruvbox-flat.nvim')
   use('rmehri01/onenord.nvim')
+  use('EdenEast/nightfox.nvim')
   use({
     'catppuccin/nvim',
     as = 'catppuccin'
