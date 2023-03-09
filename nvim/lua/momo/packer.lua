@@ -39,7 +39,8 @@ return require('packer').startup(function(use)
   use('saadparwaiz1/cmp_luasnip') -- snippet completion
   use('L3MON4D3/LuaSnip') -- snippets needed for nvim-cmp
 
-  use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }) -- parser
+  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }) -- parser
+  use({'nvim-treesitter/playground'})
 
   use('windwp/nvim-autopairs') -- auto parens, quotes, and more
   use('windwp/nvim-ts-autotag') -- auto html/jsx tags
