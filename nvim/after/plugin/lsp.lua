@@ -38,11 +38,6 @@ lspconfig.tsserver.setup(config({
   filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
   cmd = { 'typescript-language-server', '--stdio' }
 }))
-lspconfig.rust_analyzer.setup(config({
-  diagnostics = {
-    enable = true
-  }
-}))
 lspconfig.clangd.setup(config())
 lspconfig.yamlls.setup(config())
 lspconfig.pyright.setup(config())
