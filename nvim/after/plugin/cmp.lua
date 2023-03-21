@@ -19,7 +19,7 @@ cmp.setup({
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-y>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -34,7 +34,7 @@ cmp.setup({
     formatting = {
       format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
     },
-    completion = { completeopt = 'menu,menuone,noinsert'}
+    completion = { completeopt = 'menu,menuone,noinsert,noselect'}
   })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

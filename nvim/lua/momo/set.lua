@@ -15,7 +15,7 @@ vim.opt.smartcase = true
 vim.opt.wrap = false
 
 vim.cmd(":set splitright")
-vim.cmd(":set completeopt=menu,menuone")
+vim.o.completeopt = "menu,menuone,noinsert,noselect"
 
 vim.cmd(":set bs=2")
 vim.cmd(":set mouse=a")
