@@ -1,7 +1,7 @@
 local treesitter = require("nvim-treesitter.configs")
 
 treesitter.setup({
-  ensure_installed = { "help", "lua", "vim", "javascript", "typescript", "python", "rust" },
+  ensure_installed = { "vimdoc", "lua", "vim", "javascript", "typescript", "python", "rust" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,

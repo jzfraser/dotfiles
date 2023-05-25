@@ -1,61 +1,13 @@
-# Work Config
-
-export DEVSPACE_NS='dev-jfraser'
-
-alias devspace-purge='devspace purge -n $DEVSPACE_NS'
-
-function set_devspace_kube {
-  export AWS_PROFILE=staging-admin;
-  aws sso login
-  fsh k8s cluster dev
-  kubens $DEVSPACE_NS
-  kubectl get ns
-}
-
-function set_staging_kube {
-  export AWS_PROFILE=staging-admin;
-  aws sso login
-  fsh k8s cluster staging
-  kubens dbt-cloud
-  kubectl get ns
-}
-
-function set_prod_kube {
-  export AWS_PROFILE=prod-viewonly
-  aws sso login
-  kubectl config use-context dbt-cloud-prod
-  kubens dbt-cloud
-  kubectl get ns
-}
-
-function set_prod_poweruser_kube {
-  export AWS_PROFILE=prod-poweruser
-  aws sso login
-  kubectl config use-context dbt-cloud-prod
-  kubens dbt-cloud
-  kubectl get ns
-}
-
-function set_single-tenant-staging_kube {
-  export AWS_PROFILE=singletenant-poweruser
-  aws sso login
-  kubectl config use-context dbt-cloud-prod
-  kubens dbt-cloud
-  kubectl get ns
-}
-# End Work Config
-
 # Jack's config based on Luke Smith's
 # Useful aliases
 alias ls='ls -G'
 alias vim="nvim"
 alias chrome="google-chrome-stable"
 alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
-alias k="kubectl"
 
 # Modify Path
 export PATH="$PATH:/Users/jackfraser/.local/share/nvim/lsp_servers"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+# export PATH="$PATH:/opt/homebrew/bin" # only enable on macOS
 # export PATH="$HOME/.local/share/applications:$PATH" # only enable on manjaro
 
 # NVM settings
@@ -84,15 +36,6 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-# kubectl autocomplete
-function kubectl() {
-    if ! type __start_kubectl >/dev/null 2>&1; then
-        source <(command kubectl completion zsh)
-    fi
-
-    command kubectl "$@"
-}
 
 # Ruby Gems
 export GEM_HOME="$HOME/gems"
