@@ -26,7 +26,6 @@ return require('packer').startup(function(use)
   use('williamboman/mason.nvim') -- LSP manager
   use('williamboman/mason-lspconfig.nvim') -- LSP manager helper
   use('jose-elias-alvarez/null-ls.nvim') -- LSP extra stuff
-  use('MunifTanjim/prettier.nvim') -- Prettier formatting
   use('simrat39/rust-tools.nvim') -- rust with batteries included
 
   use('hrsh7th/nvim-cmp') -- Completion

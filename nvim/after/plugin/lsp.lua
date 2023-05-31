@@ -35,7 +35,6 @@ lspconfig.lua_ls.setup(config({
   }
 }))
 lspconfig.tsserver.setup(config({
-  filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
   cmd = { 'typescript-language-server', '--stdio' }
 }))
 lspconfig.clangd.setup(config())

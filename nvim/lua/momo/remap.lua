@@ -28,3 +28,4 @@ nnoremap("<C-d>", "<C-d>zz") -- half page down, keep cursor in center of buffer
 nnoremap("<C-u>", "<C-u>zz") -- half page up, keep cursor in center of buffer
 nnoremap("n", "nzzzv") -- next search term, keep cursor in center of buffer
 nnoremap("N", "Nzzzv") -- previous search term, keep cursor in center of buffer
+nnoremap("YY", "va{Vy") -- yank all in brackets surrounding cursor

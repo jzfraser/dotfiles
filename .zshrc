@@ -7,7 +7,7 @@ alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} p
 
 # Modify Path
 export PATH="$PATH:/Users/jackfraser/.local/share/nvim/lsp_servers"
-# export PATH="$PATH:/opt/homebrew/bin" # only enable on macOS
+export PATH="$PATH:/opt/homebrew/bin" # only enable on macOS
 # export PATH="$HOME/.local/share/applications:$PATH" # only enable on manjaro
 
 # NVM settings
