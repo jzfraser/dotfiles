@@ -7,6 +7,15 @@ telescope.setup({
     initial_mode = "insert",
   },
   pickers = {
+    find_files = {
+      find_command = {
+        'rg',
+        '--files',
+        '--hidden',
+        '-g',
+        '!.git'
+      }
+    },
     buffers = {
       initial_mode = "normal",
     }

@@ -6,6 +6,7 @@ local nnoremap = Remap.nnoremap
 local inoremap = Remap.inoremap
 
 local lspconfig = require('lspconfig')
+
 local function config(_config)
   return vim.tbl_deep_extend("force", {
     capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -37,7 +38,9 @@ lspconfig.lua_ls.setup(config({
 lspconfig.tsserver.setup(config({
   cmd = { 'typescript-language-server', '--stdio' }
 }))
-lspconfig.clangd.setup(config())
+lspconfig.clangd.setup(config({
+  cmd = { 'clangd', '--offset-encoding=utf-16' }
+}))
 lspconfig.yamlls.setup(config())
 lspconfig.pyright.setup(config())
 lspconfig.tailwindcss.setup(config())
