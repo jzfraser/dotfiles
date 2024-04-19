@@ -6,10 +6,15 @@ alias chrome="google-chrome-stable"
 alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
 
 # Modify Path
-export PATH="$PATH:/Users/jackfraser/.local/share/nvim/lsp_servers"
+export PATH="$PATH:/Users/jackfraser/.local/share/nvim/mason/bin/"
 export PATH="$PATH:/opt/homebrew/bin" # only enable on macOS
 export PATH="$PATH:/Users/jackfraser/go/bin/"
 # export PATH="$HOME/.local/share/applications:$PATH" # only enable on manjaro
+
+# gba dev settings
+export DEVKITPRO="/opt/devkitpro"
+export DEVKITARM="$DEVKITPRO/devkitARM"
+export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:/opt/homebrew/opt/zlib/lib/pkgconfig"
 
 # pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"

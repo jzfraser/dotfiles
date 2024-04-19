@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
   use('williamboman/mason-lspconfig.nvim') -- LSP manager helper
   use('jose-elias-alvarez/null-ls.nvim') -- LSP extra stuff
   use('simrat39/rust-tools.nvim') -- rust with batteries included
+  use('mfussenegger/nvim-jdtls') -- java with batteries included
 
   use('hrsh7th/nvim-cmp') -- Completion
   use('hrsh7th/cmp-buffer') -- nvim-cmp source for buffer words
@@ -39,7 +40,7 @@ return require('packer').startup(function(use)
   use('L3MON4D3/LuaSnip') -- snippets needed for nvim-cmp
 
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }) -- parser
-  use({'nvim-treesitter/playground'})
+  use({'nvim-treesitter/playground'}) -- view treesitter parsing
 
   use('windwp/nvim-autopairs') -- auto parens, quotes, and more
   use('windwp/nvim-ts-autotag') -- auto html/jsx tags
@@ -50,12 +51,13 @@ return require('packer').startup(function(use)
 
   use('nvim-lualine/lualine.nvim') -- activity bar
   use('akinsho/bufferline.nvim') -- tabs
-  use('mbbill/undotree')
+  use('mbbill/undotree') -- ez undo/redo tree
 
-  use('folke/which-key.nvim')
+  use('folke/which-key.nvim') -- popup keybind display
 
   use('nvim-telescope/telescope.nvim') -- fuzzy files and more
   use('nvim-telescope/telescope-file-browser.nvim')
+  use('nvim-telescope/telescope-dap.nvim')
   use({
     -- file tree
     'kyazdani42/nvim-tree.lua',

@@ -11,7 +11,7 @@ local function config(_config)
   return vim.tbl_deep_extend("force", {
     capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     on_attach = function(client)
-      client.server_capabilities.semanticTokensProvider = nil
+      -- client.server_capabilities.semanticTokensProvider = nil
       nnoremap("gd", function() vim.lsp.buf.definition() end)
       nnoremap("gr", function() vim.lsp.buf.references() end)
       nnoremap("K", function() vim.lsp.buf.hover() end)
@@ -47,3 +47,4 @@ lspconfig.tailwindcss.setup(config())
 lspconfig.terraformls.setup(config())
 lspconfig.eslint.setup(config())
 lspconfig.gopls.setup(config())
+lspconfig.volar.setup(config())
