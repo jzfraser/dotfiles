@@ -1,9 +1,7 @@
 # Jack's config based on Luke Smith's
 # Useful aliases
 alias ls='ls -G'
-alias vim="nvim"
 alias chrome="google-chrome-stable"
-alias multipull="find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;"
 
 # Modify Path
 export PATH="$PATH:/Users/jackfraser/.local/share/nvim/mason/bin/"
